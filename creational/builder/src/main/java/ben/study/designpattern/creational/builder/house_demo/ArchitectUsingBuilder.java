@@ -1,6 +1,4 @@
-package ben.study;
-
-import java.util.ArrayList;
+package ben.study.designpattern.creational.builder.house_demo;
 
 /**
  *
@@ -11,7 +9,6 @@ public class ArchitectUsingBuilder {
     public static void main(String[] args) {
 
         Room room1 = new RoomBuilder().setFloorNumber(2).createRoom();
-
     }
 
 }

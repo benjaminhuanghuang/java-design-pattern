@@ -1,5 +1,5 @@
 
-package ben.study;
+package ben.study.designpattern.creational.builder.house_demo;
 
 import java.util.ArrayList;
 
