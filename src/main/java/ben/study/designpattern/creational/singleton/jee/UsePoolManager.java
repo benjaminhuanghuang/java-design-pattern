@@ -1,4 +1,4 @@
-package ben.study.designpattern.creational.singleton;
+package ben.study.designpattern.creational.singleton.jee;
 
 import javax.inject.Inject;
 

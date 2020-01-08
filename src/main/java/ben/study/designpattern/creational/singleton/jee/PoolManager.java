@@ -1,13 +1,15 @@
-package ben.study.designpattern.creational.singleton;
+package ben.study.designpattern.creational.singleton.jee;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
+import javax.ejb.*;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.TimeUnit;
 
 @Startup   // init when app start up
 @Singleton
+@DependsOn("Configuration")
+@ConcurrencyManagement(ConcurrencyManagementType.BEAN)
 public class PoolManager {
     private Queue<Object> pooledObject;
 
@@ -20,10 +22,14 @@ public class PoolManager {
         }
     }
 
+    @AccessTimeout(value=30, unit= TimeUnit.SECONDS)
+    @Lock(LockType.WRITE)
     public void returnObject(Object obj) {
         pooledObject.offer(obj);
     }
 
+
+    @Lock(LockType.READ)
     public Object borrowObject() {
         return pooledObject.poll();
     }

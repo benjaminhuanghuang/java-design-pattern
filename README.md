@@ -23,4 +23,8 @@ interactions between objects
 ## Structural patterns
 relationships and combining
 
+ - Facade
+ 
+ Unified interface to subsystem
+ 
  

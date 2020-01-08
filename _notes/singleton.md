@@ -11,3 +11,8 @@
 
 ## Implementations
 - Lazily instantiated singleton : create instance at the first time that it is used.
+
+
+## JEE Singleton Concurrency
+- Container-managed concurrency
+- Bean-managed concurrency
